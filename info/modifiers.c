@@ -19,10 +19,12 @@ mod_t class_modifiers[] = {
     {"Ranger", 8, 2, 0, 2, 0, 0, -2},
     {"Rogue", 9, -2, 2, 0, 0, 0, 2},
     {"Sorcerer", 10, -2, 0, 0, 0, 0, 2},
-    {"Wizard", 11, -2, 0, 0, 2, 0, 2}
+    {"Warlock", 11, -2, 0, 0, 0, 0, 2},
+    {"Wizard", 12, -2, 0, 0, 2, 0, 2}
 };
 
 mod_t race_modifiers[] = {
+    // Class      Code | STR | DEX | CON | INT | WIS | CHA |
     {"Dragonborn", 1, 2, 0, 0, 0, 0, 1},
     {"Dwarf", 2, 0, 0, 2, 0, 0, 0},
     {"Elf", 3, 0, 2, 0, 0, 0, 0},
