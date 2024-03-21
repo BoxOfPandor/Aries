@@ -30,5 +30,7 @@ int role_stat(void)
         min = d4;
     if (d5 < min)
         min = d4;
+    printf("D6 rolls: %d %d %d %d %d\n", d1, d2, d3, d4, d5);
+    printf("d6 weak: %d | Final stat: %d\n", min, d1 + d2 + d3 + d4 + d5 - min);
     return (d1 + d2 + d3 + d4 - min);
 }

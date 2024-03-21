@@ -98,8 +98,6 @@ int main(int ac, char **av)
     printf("\n\nNow for eache stat the programme roll 5 d6\n");
     printf("The programme will keep the 4 highest dice\n");
     stats = get_stats();
-    printf("\nHere is the array of your stats not modify\n");
-    print_array(stats);
     printf("\nNow the programme add the modifiers of your race and your class\n");
     stats = modify_stats(stats, clase, race);
     printf("Here is the array of your stats modify\n");

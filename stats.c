@@ -12,11 +12,17 @@ stats_t get_stats(void)
 {
     stats_t stats;
 
+    printf("Rolling for strength...\n");
     stats.str = role_stat();
+    printf("\nRolling for dexterity...\n");
     stats.dex = role_stat();
+    printf("\nRolling for constitution...\n");
     stats.con = role_stat();
+    printf("\nRolling for intelligence...\n");
     stats.intl = role_stat();
+    printf("\nRolling for wisdom...\n");
     stats.wis = role_stat();
+    printf("\nRolling for charisma...\n");
     stats.cha = role_stat();
     return (stats);
 }
