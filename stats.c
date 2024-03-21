@@ -26,11 +26,11 @@ stats_t modify_stats(stats_t stats, int class, int race)
     int i;
     int j;
 
-    for (i = 0; i < 7; i++) {
+    for (i = 0; i < 10; i++) {
         if (race_modifiers[i].code == race)
             break;
     }
-    for (j = 0; j < 11; j++) {
+    for (j = 0; j < 13; j++) {
         if (class_modifiers[j].code == class)
             break;
     }
