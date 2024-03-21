@@ -10,25 +10,34 @@
 #include <string.h>
 #include "Include/Aries.h"
 
-extern mod_t race_modifiers[7];
+extern mod_t race_modifiers[8];
 extern mod_t class_modifiers[11];
 
 void print_modifiers(int race, int clase)
 {
+    int i;
+    int j;
     // Find the correct race and class modifiers
-    for (int i = 0; i < 7; i++) {
+    for (i = 0; i < 10; i++) {
         if (race_modifiers[i].code == race) {
-            printf("| Race  | %3d | %3d | %3d | %3d | %3d | %3d |\n", race_modifiers[i].str, race_modifiers[i].dex, race_modifiers[i].con, race_modifiers[i].intl, race_modifiers[i].wis, race_modifiers[i].cha);
+            printf("| %-10s | %3d | %3d | %3d | %3d | %3d | %3d |\n", race_modifiers[i].name,
+                   race_modifiers[i].str, race_modifiers[i].dex, race_modifiers[i].con, race_modifiers[i].intl, race_modifiers[i].wis, race_modifiers[i].cha);
             break;
         }
     }
-    printf("|-------|-----|-----|-----|-----|-----|-----|\n");
-    for (int i = 0; i < 11; i++) {
-        if (class_modifiers[i].code == clase) {
-            printf("| Class | %3d | %3d | %3d | %3d | %3d | %3d |\n", class_modifiers[i].str, class_modifiers[i].dex, class_modifiers[i].con, class_modifiers[i].intl, class_modifiers[i].wis, class_modifiers[i].cha);
+    printf("|------------|-----|-----|-----|-----|-----|-----|\n");
+    for (j = 0; j < 13; j++) {
+        if (class_modifiers[j].code == clase) {
+            printf("| %-10s | %3d | %3d | %3d | %3d | %3d | %3d |\n", class_modifiers[j].name,
+                   class_modifiers[j].str, class_modifiers[j].dex, class_modifiers[j].con, class_modifiers[j].intl, class_modifiers[j].wis, class_modifiers[j].cha);
             break;
         }
     }
+    printf("|------------|-----|-----|-----|-----|-----|-----|\n");
+    printf("| Total      | %3d | %3d | %3d | %3d | %3d | %3d |\n", race_modifiers[i].str + class_modifiers[j].str,
+           race_modifiers[i].dex + class_modifiers[j].dex, race_modifiers[i].con + class_modifiers[j].con,
+           race_modifiers[i].intl + class_modifiers[j].intl, race_modifiers[i].wis + class_modifiers[j].wis,
+           race_modifiers[i].cha + class_modifiers[j].cha);
 }
 
 void print_logo(void)
@@ -79,11 +88,11 @@ int main(int ac, char **av)
     system("clear");
     print_logo();
     printf("\nHere is the array of your modifiers for your race and your classe\n");
-    printf("|-------------------------------------------|\n");
-    printf("|       | STR | DEX | CON | INT | WIS | CHA |\n");
-    printf("|-------|-----|-----|-----|-----|-----|-----|\n");
+    printf("|------------------------------------------------|\n");
+    printf("|            | STR | DEX | CON | INT | WIS | CHA |\n");
+    printf("|------------|-----|-----|-----|-----|-----|-----|\n");
     print_modifiers(race, clase);
-    printf("|-------------------------------------------|\n");
+    printf("|------------------------------------------------|\n");
 
     //--------------------- Start second step ---------------------
     printf("\n\nNow for eache stat the programme roll 5 d6\n");
